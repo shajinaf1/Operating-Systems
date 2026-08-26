@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Operating Systems</title>
+<style>
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #000000;
+  background: #ffffff;
+  margin: 0;
+  padding: 0;
+}
+.page {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 20px 24px 60px;
+}
+h1 {
+  font-size: 22px;
+  margin: 10px 0 14px;
+}
+.nav {
+  font-size: 13px;
+  margin: 10px 0 18px;
+}
+.nav a {
+  color: #0000EE;
+  text-decoration: underline;
+  margin-right: 4px;
+}
+hr {
+  border: none;
+  border-top: 1px solid #999999;
+  margin: 16px 0;
+}
+h2.part {
+  font-size: 16px;
+  background: #eeeeee;
+  border: 1px solid #cccccc;
+  padding: 5px 8px;
+  margin: 26px 0 4px;
+}
+p.part-desc {
+  font-size: 13px;
+  color: #333333;
+  margin: 4px 0 10px;
+  font-style: italic;
+}
+table.chapters {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 6px;
+}
+table.chapters td {
+  border: 1px solid #dddddd;
+  vertical-align: top;
+  padding: 8px;
+  font-size: 13px;
+}
+td.icon-cell {
+  width: 40px;
+  text-align: center;
+}
+td.icon-cell svg {
+  width: 26px;
+  height: 26px;
+  stroke: #000000;
+  fill: none;
+  stroke-width: 1.5;
+}
+.chtitle {
+  font-weight: bold;
+  font-size: 13.5px;
+}
+.chnum {
+  color: #666666;
+}
+.topics {
+  margin-top: 4px;
+  color: #333333;
+}
+.topics b {
+  font-weight: normal;
+  color: #555555;
+}
+td.upload-cell {
+  width: 130px;
+  text-align: center;
+}
+.upload-slot {
+  border: 1px dashed #aaaaaa;
+  padding: 6px 4px;
+  margin-bottom: 6px;
+  font-size: 11px;
+  color: #555555;
+}
+.upload-slot:last-child {
+  margin-bottom: 0;
+}
+.upload-slot label {
+  display: block;
+  margin-bottom: 3px;
+}
+.upload-slot input[type="file"] {
+  font-size: 10px;
+  width: 100%;
+}
+.upload-slot .fname {
+  display: block;
+  margin-top: 3px;
+  font-size: 10px;
+  color: #0000EE;
+  word-break: break-all;
+}
+footer {
+  margin-top: 40px;
+  font-size: 12px;
+  color: #666666;
+  border-top: 1px solid #cccccc;
+  padding-top: 10px;
+}
+</style>
+</head>
+<body>
+<div class="page">
+
+  <h1>Operating Systems</h1>
+
+  <div class="nav">
+    <a href="#part1">Background</a> |
+    <a href="#part2">Processes</a> |
+    <a href="#part3">Memory</a> |
+    <a href="#part4">Scheduling &amp; I/O</a> |
+    <a href="#part5">Advanced Architectures</a> |
+    <a href="#part6">Distributed Systems</a>
+  </div>
+
+  <hr>
+
+  <h2 class="part" id="part1">Part One: Background</h2>
+  <p class="part-desc">Hardware and conceptual groundwork used throughout the rest of the course.</p>
+  <table class="chapters">
+    <tr>
+      <td class="icon-cell"><svg viewBox="0 0 24 24"><rect x="7" y="7" width="10" height="10" rx="1"/><line x1="12" y1="7" x2="12" y2="3"/><line x1="12" y1="17" x2="12" y2="21"/><line x1="7" y1="12" x2="3" y2="12"/><line x1="17" y1="12" x2="21" y2="12"/></svg></td>
+      <td>
+        <span class="chnum">Chapter 1:</span> <span class="chtitle">Computer System Overview</span>
+        <div class="topics"><b>Topics:</b> processor and register organization, interrupts, memory hierarchy and cache, I/O structuring, multicore basics</div>
+      </td>
+      <td class="upload-cell">
+        <div class="upload-slot"><label for="ppt-1">Slides (.pptx)</label><input type="file" id="ppt-1" accept=".ppt,.pptx" onchange="showName(this,'name-ppt-1')"><span class="fname" id="name-ppt-1"></span></div>
+        <div class="upload-slot"><label for="notes-1">Notes (.pdf/.docx)</label><input type="file" id="notes-1" accept=".pdf,.doc,.docx" onchange="showName(this,'name-notes-1')"><span class="fname" id="name-notes-1"></span></div>
+      </td>
+    </tr>
+    <tr>
+      <td class="icon-cell"><svg viewBox="0 0 24 24"><path d="M12 2 L21 7 L12 12 L3 7 Z"/><path d="M3 12 L12 17 L21 12"/><path d="M3 16 L12 21 L21 16"/></svg></td>
+      <td>
+        <span class="chnum">Chapter 2:</span> <span class="chtitle">Operating System Overview</span>
+        <div class="topics"><b>Topics:</b> OS objectives, evolution from batch to time-sharing systems, monolithic vs. microkernel vs. layered design, case studies (Linux, Windows 10, Android)</div>
+      </td>
+      <td class="upload-cell">
+        <div class="upload-slot"><label for="ppt-2">Slides (.pptx)</label><input type="file" id="ppt-2" accept=".ppt,.pptx" onchange="showName(this,'name-ppt-2')"><span class="fname" id="name-ppt-2"></span></div>
+        <div class="upload-slot"><label for="notes-2">Notes (.pdf/.docx)</label><input type="file" id="notes-2" accept=".pdf,.doc,.docx" onchange="showName(this,'name-notes-2')"><span class="fname" id="name-notes-2"></span></div>
+      </td>
+    </tr>
+  </table>
+
+  <h2 class="part" id="part2">Part Two: Processes</h2>
+  <p class="part-desc">How the OS represents and manages execution, and what goes wrong when it is shared.</p>
+  <table class="chapters">
+    <tr>
+      <td class="icon-cell"><svg viewBox="0 0 24 24"><circle cx="5" cy="12" r="2.3"/><circle cx="19" cy="6" r="2.3"/><circle cx="19" cy="18" r="2.3"/><line x1="7.2" y1="11" x2="16.8" y2="7"/><line x1="7.2" y1="13" x2="16.8" y2="17"/></svg></td>
+      <td>
+        <span class="chnum">Chapter 3:</span> <span class="chtitle">Process Description and Control</span>
+        <div class="topics"><b>Topics:</b> process states and transitions, process control block, process creation and termination, modes of execution, UNIX SVR4 process management</div>
+      </td>
+      <td class="upload-cell">
+        <div class="upload-slot"><label for="ppt-3">Slides (.pptx)</label><input type="file" id="ppt-3" accept=".ppt,.pptx" onchange="showName(this,'name-ppt-3')"><span class="fname" id="name-ppt-3"></span></div>
+        <div class="upload-slot"><label for="notes-3">Notes (.pdf/.docx)</label><input type="file" id="notes-3" accept=".pdf,.doc,.docx" onchange="showName(this,'name-notes-3')"><span class="fname" id="name-notes-3"></span></div>
+      </td>
+    </tr>
+    <tr>
+      <td class="icon-cell"><svg viewBox="0 0 24 24"><line x1="12" y1="4.5" x2="12" y2="11"/><line x1="12" y1="11" x2="6" y2="17.5"/><line x1="12" y1="11" x2="18" y2="17.5"/><circle cx="12" cy="3.2" r="1.7"/><circle cx="6" cy="18.8" r="1.7"/><circle cx="18" cy="18.8" r="1.7"/></svg></td>
+      <td>
+        <span class="chnum">Chapter 4:</span> <span class="chtitle">Threads</span>
+        <div class="topics"><b>Topics:</b> process vs. thread, user-level vs. kernel-level threads, multithreading models, thread pools, Windows/Linux thread implementation</div>
+      </td>
+      <td class="upload-cell">
+        <div class="upload-slot"><label for="ppt-4">Slides (.pptx)</label><input type="file" id="ppt-4" accept=".ppt,.pptx" onchange="showName(this,'name-ppt-4')"><span class="fname" id="name-ppt-4"></span></div>
+        <div class="upload-slot"><label for="notes-4">Notes (.pdf/.docx)</label><input type="file" id="notes-4" accept=".pdf,.doc,.docx" onchange="showName(this,'name-notes-4')"><span class="fname" id="name-notes-4"></span></div>
+      </td>
+    </tr>
+    <tr>
+      <td class="icon-cell"><svg viewBox="0 0 24 24"><rect x="6" y="11" width="12" height="9" rx="1.5"/><path d="M8.5 11 V8 a3.5 3.5 0 0 1 7 0 V11"/><circle cx="12" cy="15" r="1" fill="#000"/></svg></td>
+      <td>
+        <span class="chnum">Chapter 5:</span> <span class="chtitle">Concurrency: Mutual Exclusion and Synchronization</span>
+        <div class="topics"><b>Topics:</b> race conditions and critical sections, software/hardware mutual exclusion, semaphores, monitors, message passing</div>
+      </td>
+      <td class="upload-cell">
+        <div class="upload-slot"><label for="ppt-5">Slides (.pptx)</label><input type="file" id="ppt-5" accept=".ppt,.pptx" onchange="showName(this,'name-ppt-5')"><span class="fname" id="name-ppt-5"></span></div>
+        <div class="upload-slot"><label for="notes-5">Notes (.pdf/.docx)</label><input type="file" id="notes-5" accept=".pdf,.doc,.docx" onchange="showName(this,'name-notes-5')"><span class="fname" id="name-notes-5"></span></div>
+      </td>
+    </tr>
+    <tr>
+      <td class="icon-cell"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="7" stroke-dasharray="3 3"/><line x1="9" y1="9" x2="15" y2="15"/><line x1="15" y1="9" x2="9" y2="15"/></svg></td>
+      <td>
+        <span class="chnum">Chapter 6:</span> <span class="chtitle">Concurrency: Deadlock and Starvation</span>
+        <div class="topics"><b>Topics:</b> conditions for deadlock, prevention/avoidance/detection, Banker's algorithm, dining philosophers, UNIX/Linux deadlock handling</div>
+      </td>
+      <td class="upload-cell">
+        <div class="upload-slot"><label for="ppt-6">Slides (.pptx)</label><input type="file" id="ppt-6" accept=".ppt,.pptx" onchange="showName(this,'name-ppt-6')"><span class="fname" id="name-ppt-6"></span></div>
+        <div class="upload-slot"><label for="notes-6">Notes (.pdf/.docx)</label><input type="file" id="notes-6" accept=".pdf,.doc,.docx" onchange="showName(this,'name-notes-6')"><span class="fname" id="name-notes-6"></span></div>
+      </td>
+    </tr>
+  </table>
+
+  <h2 class="part" id="part3">Part Three: Memory</h2>
+  <p class="part-desc">Giving every process the illusion of private, unlimited memory.</p>
+  <table class="chapters">
+    <tr>
+      <td class="icon-cell"><svg viewBox="0 0 24 24"><rect x="4" y="4" width="7" height="7" rx="1"/><rect x="13" y="4" width="7" height="7" rx="1"/><rect x="4" y="13" width="7" height="7" rx="1"/><rect x="13" y="13" width="7" height="7" rx="1"/></svg></td>
+      <td>
+        <span class="chnum">Chapter 7:</span> <span class="chtitle">Memory Management</span>
+        <div class="topics"><b>Topics:</b> fixed and dynamic partitioning, paging, segmentation, address translation basics</div>
+      </td>
+      <td class="upload-cell">
+        <div class="upload-slot"><label for="ppt-7">Slides (.pptx)</label><input type="file" id="ppt-7" accept=".ppt,.pptx" onchange="showName(this,'name-ppt-7')"><span class="fname" id="name-ppt-7"></span></div>
+        <div class="upload-slot"><label for="notes-7">Notes (.pdf/.docx)</label><input type="file" id="notes-7" accept=".pdf,.doc,.docx" onchange="showName(this,'name-notes-7')"><span class="fname" id="name-notes-7"></span></div>
+      </td>
+    </tr>
+    <tr>
+      <td class="icon-cell"><svg viewBox="0 0 24 24"><rect x="2" y="4" width="7" height="16" rx="1"/><rect x="15" y="4" width="7" height="16" rx="1"/><line x1="9" y1="9" x2="14" y2="9"/><polyline points="12,7 14,9 12,11"/><line x1="15" y1="15" x2="10" y2="15"/><polyline points="12,13 10,15 12,17"/></svg></td>
+      <td>
+        <span class="chnum">Chapter 8:</span> <span class="chtitle">Virtual Memory</span>
+        <div class="topics"><b>Topics:</b> demand paging, page replacement (LRU, FIFO, clock), thrashing, working-set model, translation lookaside buffers</div>
+      </td>
+      <td class="upload-cell">
+        <div class="upload-slot"><label for="ppt-8">Slides (.pptx)</label><input type="file" id="ppt-8" accept=".ppt,.pptx" onchange="showName(this,'name-ppt-8')"><span class="fname" id="name-ppt-8"></span></div>
+        <div class="upload-slot"><label for="notes-8">Notes (.pdf/.docx)</label><input type="file" id="notes-8" accept=".pdf,.doc,.docx" onchange="showName(this,'name-notes-8')"><span class="fname" id="name-notes-8"></span></div>
+      </td>
+    </tr>
+  </table>
+
+  <h2 class="part" id="part4">Part Four: Scheduling and I/O</h2>
+  <p class="part-desc">Deciding who runs next, and moving data between memory and the outside world.</p>
+  <table class="chapters">
+    <tr>
+      <td class="icon-cell"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><line x1="12" y1="12" x2="12" y2="7"/><line x1="12" y1="12" x2="16" y2="14"/></svg></td>
+      <td>
+        <span class="chnum">Chapter 9:</span> <span class="chtitle">Uniprocessor Scheduling</span>
+        <div class="topics"><b>Topics:</b> scheduling criteria, FCFS, SJF, priority scheduling, round robin, multilevel feedback queues</div>
+      </td>
+      <td class="upload-cell">
+        <div class="upload-slot"><label for="ppt-9">Slides (.pptx)</label><input type="file" id="ppt-9" accept=".ppt,.pptx" onchange="showName(this,'name-ppt-9')"><span class="fname" id="name-ppt-9"></span></div>
+        <div class="upload-slot"><label for="notes-9">Notes (.pdf/.docx)</label><input type="file" id="notes-9" accept=".pdf,.doc,.docx" onchange="showName(this,'name-notes-9')"><span class="fname" id="name-notes-9"></span></div>
+      </td>
+    </tr>
+    <tr>
+      <td class="icon-cell"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="8" height="8" rx="1"/><rect x="13" y="3" width="8" height="8" rx="1"/><rect x="3" y="13" width="8" height="8" rx="1"/><rect x="13" y="13" width="8" height="8" rx="1"/></svg></td>
+      <td>
+        <span class="chnum">Chapter 10:</span> <span class="chtitle">Multiprocessor, Multicore, and Real-Time Scheduling</span>
+        <div class="topics"><b>Topics:</b> SMP scheduling, load balancing and affinity, rate monotonic scheduling, earliest deadline first</div>
+      </td>
+      <td class="upload-cell">
+        <div class="upload-slot"><label for="ppt-10">Slides (.pptx)</label><input type="file" id="ppt-10" accept=".ppt,.pptx" onchange="showName(this,'name-ppt-10')"><span class="fname" id="name-ppt-10"></span></div>
+        <div class="upload-slot"><label for="notes-10">Notes (.pdf/.docx)</label><input type="file" id="notes-10" accept=".pdf,.doc,.docx" onchange="showName(this,'name-notes-10')"><span class="fname" id="name-notes-10"></span></div>
+      </td>
+    </tr>
+    <tr>
+      <td class="icon-cell"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/><line x1="12" y1="3" x2="12" y2="9"/></svg></td>
+      <td>
+        <span class="chnum">Chapter 11:</span> <span class="chtitle">I/O Management and Disk Scheduling</span>
+        <div class="topics"><b>Topics:</b> I/O device classes, buffering, disk scheduling (SSTF, SCAN, C-SCAN), RAID</div>
+      </td>
+      <td class="upload-cell">
+        <div class="upload-slot"><label for="ppt-11">Slides (.pptx)</label><input type="file" id="ppt-11" accept=".ppt,.pptx" onchange="showName(this,'name-ppt-11')"><span class="fname" id="name-ppt-11"></span></div>
+        <div class="upload-slot"><label for="notes-11">Notes (.pdf/.docx)</label><input type="file" id="notes-11" accept=".pdf,.doc,.docx" onchange="showName(this,'name-notes-11')"><span class="fname" id="name-notes-11"></span></div>
+      </td>
+    </tr>
+    <tr>
+      <td class="icon-cell"><svg viewBox="0 0 24 24"><path d="M3 7a1 1 0 0 1 1-1h5l2 2h9a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1z"/></svg></td>
+      <td>
+        <span class="chnum">Chapter 12:</span> <span class="chtitle">File Management</span>
+        <div class="topics"><b>Topics:</b> file organization and directories, allocation methods (contiguous, linked, indexed), free-space management, journaling</div>
+      </td>
+      <td class="upload-cell">
+        <div class="upload-slot"><label for="ppt-12">Slides (.pptx)</label><input type="file" id="ppt-12" accept=".ppt,.pptx" onchange="showName(this,'name-ppt-12')"><span class="fname" id="name-ppt-12"></span></div>
+        <div class="upload-slot"><label for="notes-12">Notes (.pdf/.docx)</label><input type="file" id="notes-12" accept=".pdf,.doc,.docx" onchange="showName(this,'name-notes-12')"><span class="fname" id="name-notes-12"></span></div>
+      </td>
+    </tr>
+  </table>
+
+  <h2 class="part" id="part5">Part Five: Advanced Architectures</h2>
+  <p class="part-desc">Where OS design meets tiny devices, shared hardware, security threats, and rented infrastructure.</p>
+  <table class="chapters">
+    <tr>
+      <td class="icon-cell"><svg viewBox="0 0 24 24"><rect x="8" y="6" width="8" height="12" rx="1"/><line x1="8" y1="9" x2="4" y2="9"/><line x1="8" y1="13" x2="4" y2="13"/><line x1="8" y1="17" x2="4" y2="17"/><line x1="16" y1="9" x2="20" y2="9"/><line x1="16" y1="13" x2="20" y2="13"/><line x1="16" y1="17" x2="20" y2="17"/></svg></td>
+      <td>
+        <span class="chnum">Chapter 13:</span> <span class="chtitle">Embedded Operating Systems</span>
+        <div class="topics"><b>Topics:</b> real-time requirements, memory and footprint constraints, RTOS design</div>
+      </td>
+      <td class="upload-cell">
+        <div class="upload-slot"><label for="ppt-13">Slides (.pptx)</label><input type="file" id="ppt-13" accept=".ppt,.pptx" onchange="showName(this,'name-ppt-13')"><span class="fname" id="name-ppt-13"></span></div>
+        <div class="upload-slot"><label for="notes-13">Notes (.pdf/.docx)</label><input type="file" id="notes-13" accept=".pdf,.doc,.docx" onchange="showName(this,'name-notes-13')"><span class="fname" id="name-notes-13"></span></div>
+      </td>
+    </tr>
+    <tr>
+      <td class="icon-cell"><svg viewBox="0 0 24 24"><rect x="4" y="8" width="12" height="12" rx="1.5"/><rect x="8" y="4" width="12" height="12" rx="1.5"/></svg></td>
+      <td>
+        <span class="chnum">Chapter 14:</span> <span class="chtitle">Virtual Machines</span>
+        <div class="topics"><b>Topics:</b> Type 1 vs. Type 2 hypervisors, full virtualization vs. paravirtualization, containers vs. VMs</div>
+      </td>
+      <td class="upload-cell">
+        <div class="upload-slot"><label for="ppt-14">Slides (.pptx)</label><input type="file" id="ppt-14" accept=".ppt,.pptx" onchange="showName(this,'name-ppt-14')"><span class="fname" id="name-ppt-14"></span></div>
+        <div class="upload-slot"><label for="notes-14">Notes (.pdf/.docx)</label><input type="file" id="notes-14" accept=".pdf,.doc,.docx" onchange="showName(this,'name-notes-14')"><span class="fname" id="name-notes-14"></span></div>
+      </td>
+    </tr>
+    <tr>
+      <td class="icon-cell"><svg viewBox="0 0 24 24"><path d="M12 3 L20 6 V12 C20 17 16.5 20.5 12 21 C7.5 20.5 4 17 4 12 V6 Z"/><path d="M9 12 l2 2 l4-4"/></svg></td>
+      <td>
+        <span class="chnum">Chapter 15:</span> <span class="chtitle">Operating System Security</span>
+        <div class="topics"><b>Topics:</b> access control models, authentication, buffer overflow and exploitation basics, trusted systems</div>
+      </td>
+      <td class="upload-cell">
+        <div class="upload-slot"><label for="ppt-15">Slides (.pptx)</label><input type="file" id="ppt-15" accept=".ppt,.pptx" onchange="showName(this,'name-ppt-15')"><span class="fname" id="name-ppt-15"></span></div>
+        <div class="upload-slot"><label for="notes-15">Notes (.pdf/.docx)</label><input type="file" id="notes-15" accept=".pdf,.doc,.docx" onchange="showName(this,'name-notes-15')"><span class="fname" id="name-notes-15"></span></div>
+      </td>
+    </tr>
+    <tr>
+      <td class="icon-cell"><svg viewBox="0 0 24 24"><path d="M6 18h11a4 4 0 0 0 .3-8 5.5 5.5 0 0 0-10.6-1.5A4 4 0 0 0 6 18z"/></svg></td>
+      <td>
+        <span class="chnum">Chapter 16:</span> <span class="chtitle">Cloud and IoT Operating Systems</span>
+        <div class="topics"><b>Topics:</b> cloud service and deployment models, resource pooling and elasticity, constrained-device OS design</div>
+      </td>
+      <td class="upload-cell">
+        <div class="upload-slot"><label for="ppt-16">Slides (.pptx)</label><input type="file" id="ppt-16" accept=".ppt,.pptx" onchange="showName(this,'name-ppt-16')"><span class="fname" id="name-ppt-16"></span></div>
+        <div class="upload-slot"><label for="notes-16">Notes (.pdf/.docx)</label><input type="file" id="notes-16" accept=".pdf,.doc,.docx" onchange="showName(this,'name-notes-16')"><span class="fname" id="name-notes-16"></span></div>
+      </td>
+    </tr>
+  </table>
+
+  <h2 class="part" id="part6">Part Six: Networked and Distributed Systems</h2>
+  <p class="part-desc">Single-machine ideas renegotiated across a network with no shared memory or clock.</p>
+  <table class="chapters">
+    <tr>
+      <td class="icon-cell"><svg viewBox="0 0 24 24"><circle cx="12" cy="4" r="2"/><circle cx="5" cy="18" r="2"/><circle cx="19" cy="18" r="2"/><line x1="12" y1="6" x2="5" y2="16"/><line x1="12" y1="6" x2="19" y2="16"/><line x1="7" y1="18" x2="17" y2="18"/></svg></td>
+      <td>
+        <span class="chnum">Chapter 17:</span> <span class="chtitle">Networking</span>
+        <div class="topics"><b>Topics:</b> protocol architectures (TCP/IP), sockets, network OS support</div>
+      </td>
+      <td class="upload-cell">
+        <div class="upload-slot"><label for="ppt-17">Slides (.pptx)</label><input type="file" id="ppt-17" accept=".ppt,.pptx" onchange="showName(this,'name-ppt-17')"><span class="fname" id="name-ppt-17"></span></div>
+        <div class="upload-slot"><label for="notes-17">Notes (.pdf/.docx)</label><input type="file" id="notes-17" accept=".pdf,.doc,.docx" onchange="showName(this,'name-notes-17')"><span class="fname" id="name-notes-17"></span></div>
+      </td>
+    </tr>
+    <tr>
+      <td class="icon-cell"><svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="6" rx="1"/><rect x="4" y="14" width="16" height="6" rx="1"/><circle cx="7" cy="7" r="0.8" fill="#000"/><circle cx="7" cy="17" r="0.8" fill="#000"/></svg></td>
+      <td>
+        <span class="chnum">Chapter 18:</span> <span class="chtitle">Distributed Processing, Client/Server, and Clusters</span>
+        <div class="topics"><b>Topics:</b> client/server models, clustering approaches, middleware</div>
+      </td>
+      <td class="upload-cell">
+        <div class="upload-slot"><label for="ppt-18">Slides (.pptx)</label><input type="file" id="ppt-18" accept=".ppt,.pptx" onchange="showName(this,'name-ppt-18')"><span class="fname" id="name-ppt-18"></span></div>
+        <div class="upload-slot"><label for="notes-18">Notes (.pdf/.docx)</label><input type="file" id="notes-18" accept=".pdf,.doc,.docx" onchange="showName(this,'name-notes-18')"><span class="fname" id="name-notes-18"></span></div>
+      </td>
+    </tr>
+    <tr>
+      <td class="icon-cell"><svg viewBox="0 0 24 24"><circle cx="4" cy="6" r="1.8"/><circle cx="20" cy="6" r="1.8"/><circle cx="12" cy="12" r="1.8"/><circle cx="4" cy="18" r="1.8"/><circle cx="20" cy="18" r="1.8"/><line x1="5.5" y1="7" x2="10.5" y2="11"/><line x1="18.5" y1="7" x2="13.5" y2="11"/><line x1="5.5" y1="17" x2="10.5" y2="13"/><line x1="18.5" y1="17" x2="13.5" y2="13"/></svg></td>
+      <td>
+        <span class="chnum">Chapter 19:</span> <span class="chtitle">Distributed Process Management</span>
+        <div class="topics"><b>Topics:</b> process migration, distributed global states, distributed mutual exclusion and election algorithms</div>
+      </td>
+      <td class="upload-cell">
+        <div class="upload-slot"><label for="ppt-19">Slides (.pptx)</label><input type="file" id="ppt-19" accept=".ppt,.pptx" onchange="showName(this,'name-ppt-19')"><span class="fname" id="name-ppt-19"></span></div>
+        <div class="upload-slot"><label for="notes-19">Notes (.pdf/.docx)</label><input type="file" id="notes-19" accept=".pdf,.doc,.docx" onchange="showName(this,'name-notes-19')"><span class="fname" id="name-notes-19"></span></div>
+      </td>
+    </tr>
+  </table>
+
+  <footer>
+    Based on William Stallings, <i>Operating Systems: Internals and Design Principles</i>, 9th Edition, Pearson, 2018.<br>
+    Chapter groupings and topic lists above are course-preparation notes, not textbook text. File slots above are for local reference only; selecting a file here does not upload or store it anywhere.
+  </footer>
+
+</div>
+
+<script>
+function showName(input, targetId) {
+  var el = document.getElementById(targetId);
+  el.textContent = input.files.length ? input.files[0].name : "";
+}
+</script>
+
+</body>
+</html>
